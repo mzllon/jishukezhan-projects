@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.jishukezhan</groupId>
+    <artifactId>jishukezhan-root</artifactId>
+    <version>0.0.1</version>
+
+    <packaging>pom</packaging>
+
+    <name>jishukezhan projects</name>
+    <description>技术客栈的项目，提供了一些工具方法。</description>
+    <url>https://github.com/mzllon/jishukezhan-projects</url>
+
+    <developers>
+        <developer>
+            <id>tony</id>
+            <name>Tony</name>
+            <email>mzllon@qq.com</email>
+            <url>https://github.com/mzllon</url>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <jdk.version>8</jdk.version>
+        <lombok.version>1.18.12</lombok.version>
+        <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+
+        <okhttp3.version>3.14.7</okhttp3.version>
+        <apache-httpclient.version>4.5.12</apache-httpclient.version>
+
+        <!-- region test framework version -->
+        <junit.version>4.13</junit.version>
+        <junit5.version>5.6.0</junit5.version>
+        <testng.version>7.1.0</testng.version>
+        <!-- endregion -->
+
+        <!-- region json version -->
+        <gson.version>2.8.6</gson.version>
+        <fastjson.version>1.2.67</fastjson.version>
+        <jackson2.version>2.10.3</jackson2.version>
+        <!-- endregion -->
+
+        <!-- region log version -->
+        <slf4j.version>1.7.30</slf4j.version>
+        <log4j2.version>2.13.1</log4j2.version>
+        <log4j.version>1.2.17</log4j.version>
+        <commons-logging.version>1.2</commons-logging.version>
+        <!-- endregion -->
+
+        <jishukezhan.version>0.0.1</jishukezhan.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- region test framework -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency> <!-- junit -->
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+                <scope>test</scope>
+            </dependency> <!-- testng -->
+            <!-- endregion -->
+
+            <!-- region log -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency> <!-- slf4j -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency> <!-- log4j2 -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency> <!-- slf4j-log4j2 -->
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency> <!-- log4j -->
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${commons-logging.version}</version>
+            </dependency> <!-- commons-logging -->
+
+            <!-- endregion -->
+
+            <!-- region json -->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency> <!-- gson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency> <!-- fastjson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson2.version}</version>
+            </dependency><!-- jackson -->
+            <!-- endregion -->
+
+
+            <!-- region servlet -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax.servlet-api.version}</version>
+            </dependency> <!-- servlet-api -->
+            <!-- endregion -->
+
+            <!-- region okhttp3 -->
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp3.version}</version>
+            </dependency>
+            <!-- endregion -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${apache-httpclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+                <version>${apache-httpclient.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency> <!-- lombok -->
+
+
+            <dependency>
+                <groupId>com.jishukezhan</groupId>
+                <artifactId>jishukezhan-annotation</artifactId>
+                <version>${jishukezhan.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jishukezhan</groupId>
+                <artifactId>jishukezhan-core</artifactId>
+                <version>${jishukezhan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jishukezhan.json</groupId>
+                <artifactId>jishukezhan-json-api</artifactId>
+                <version>${jishukezhan.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jishukezhan.json</groupId>
+                <artifactId>jishukezhan-gson</artifactId>
+                <version>${jishukezhan.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jishukezhan.json</groupId>
+                <artifactId>jishukezhan-jackson</artifactId>
+                <version>${jishukezhan.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jishukezhan.json</groupId>
+                <artifactId>jishukezhan-fastjson</artifactId>
+                <version>${jishukezhan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jishukezhan.http</groupId>
+                <artifactId>jishukezhan-http-api</artifactId>
+                <version>${jishukezhan.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jishukezhan.http</groupId>
+                <artifactId>jishukezhan-okhttp</artifactId>
+                <version>${jishukezhan.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jishukezhan.http</groupId>
+                <artifactId>jishukezhan-apachehttpclient</artifactId>
+                <version>${jishukezhan.version}</version>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>Aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aliyun</id>
+            <name>Aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-repo-maven</id>
+            <url>https://api.bintray.com/maven/mzllon/maven/jishukezhan-root/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>deploy</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                    </plugin>
+                    <!-- java sources plugin-->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- compile plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                    <configuration>
+                        <source>${jdk.version}</source>
+                        <target>${jdk.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <!-- javadoc plugin-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.1.1</version>
+                    <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <charset>${project.build.sourceEncoding}</charset>
+                        <docencoding>${project.build.sourceEncoding}</docencoding>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- java sources plugin-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.2.1</version>
+                    <configuration>
+                        <attach>true</attach>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
