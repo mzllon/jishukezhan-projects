@@ -43,7 +43,7 @@
         <apache-httpclient.version>4.5.12</apache-httpclient.version>
 
         <!-- region test framework version -->
-        <junit.version>4.13</junit.version>
+        <junit.version>4.13.1</junit.version>
         <junit5.version>5.6.0</junit5.version>
         <testng.version>7.1.0</testng.version>
         <!-- endregion -->
