@@ -40,7 +40,7 @@
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
 
         <okhttp3.version>3.14.7</okhttp3.version>
-        <apache-httpclient.version>4.5.12</apache-httpclient.version>
+        <apache-httpclient.version>4.5.13</apache-httpclient.version>
 
         <!-- region test framework version -->
         <junit.version>4.13</junit.version>
